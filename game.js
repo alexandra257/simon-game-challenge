@@ -4,6 +4,7 @@ const gamePattern = [];
 
 const userClickedPattern = [];
 
+//--------------------------------------------
 function nextSequence() {
   let randomNum = Math.floor(Math.random() * 4); //generating random num between 0-3
   const randomChosenColour = buttonColours[randomNum]; //getting the colour at the index that matches the random number
@@ -15,13 +16,20 @@ function nextSequence() {
     .fadeOut(100)
     .fadeIn(100);
 
-  var audio = new Audio(`sounds/${randomChosenColour}.mp3`); //concatenating the audio file name so it matches whatever random colour is generated
-  audio.play();
+  playSound(randomChosenColour); //calls playSound function & plays relevant sound
 }
 
+//-------------------------------------------
+
 $(".btn").on("click", (event) => {
-  //   console.log("button clicked");
   let userChosenColour = $(event.currentTarget).attr("id"); //get's the id of the clicked button
-  userClickedPattern.push(userChosenColour);
-  console.log(userClickedPattern);
+  userClickedPattern.push(userChosenColour); //adds the clicked button the the userClickedPattern array
+  //   console.log(userClickedPattern);
+  playSound(userChosenColour); //calls playSound function & plays relevant sound when button is clicked
 });
+
+//------------------------------
+function playSound(name) {
+  var audio = new Audio(`sounds/${name}.mp3`); //concatenating the audio file name so it matches whatever random colour is generated
+  audio.play();
+}
