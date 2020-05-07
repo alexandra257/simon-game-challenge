@@ -29,4 +29,20 @@ You should end up with an effect like this:
 3. Use Google/Stackoverflow to figure out how you can use Javascript to play the sound for the button colour selected in step 1.
 
 
+STEP 4- Check Which Button is Pressed
+1. Use jQuery to detect when any of the buttons are clicked and trigger a handler function.
+
+2. Inside the handler, create a new variable called userChosenColour to store the id of the button that got clicked.
+
+--> So if the Green button was clicked, userChosenColour will equal its id which is "green".
+
+
+3. At the top of the game.js file, create a new empty array with the name userClickedPattern.
+
+4. Add the contents of the variable userChosenColour created in step 2 to the end of this new userClickedPattern
+
+At this stage, if you log the userClickedPattern you should be able to build up an array in the console by clicking on different buttons.
+
+
+
 */
