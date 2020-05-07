@@ -18,4 +18,15 @@ You can use the Chrome console to verify that your code creates random numbers b
 6. Add the new randomChosenColour generated in step 4 to the end of the gamePattern.
 
 
+STEP 3 - Show the Sequence to the User with Animations and Sounds
+1. Use jQuery to select the button with the same id as the randomChosenColour
+
+2. Use Google/Stackoverflow to figure out how you can use jQuery to animate a flash to the button selected in step 1.
+
+You should end up with an effect like this:
+
+
+3. Use Google/Stackoverflow to figure out how you can use Javascript to play the sound for the button colour selected in step 1.
+
+
 */
