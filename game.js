@@ -2,6 +2,8 @@ const buttonColours = ["red", "blue", "green", "yellow"];
 
 const gamePattern = [];
 
+const userClickedPattern = [];
+
 function nextSequence() {
   let randomNum = Math.floor(Math.random() * 4); //generating random num between 0-3
   const randomChosenColour = buttonColours[randomNum]; //getting the colour at the index that matches the random number
@@ -20,5 +22,6 @@ function nextSequence() {
 $(".btn").on("click", (event) => {
   //   console.log("button clicked");
   let userChosenColour = $(event.currentTarget).attr("id"); //get's the id of the clicked button
-  console.log(userChosenColour);
+  userClickedPattern.push(userChosenColour);
+  console.log(userClickedPattern);
 });
