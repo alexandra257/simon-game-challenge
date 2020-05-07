@@ -26,10 +26,21 @@ $(".btn").on("click", (event) => {
   userClickedPattern.push(userChosenColour); //adds the clicked button the the userClickedPattern array
   //   console.log(userClickedPattern);
   playSound(userChosenColour); //calls playSound function & plays relevant sound when button is clicked
+  animatePress(userChosenColour);
 });
 
 //------------------------------
 function playSound(name) {
   var audio = new Audio(`sounds/${name}.mp3`); //concatenating the audio file name so it matches whatever random colour is generated
   audio.play();
+}
+
+//------------------------------
+function animatePress(currentColour) {
+  $(`.${currentColour}`).addClass("pressed"); //concatenate so we can select the class (needed the . before the colour)
+
+  setTimeout(() => {
+    //adding delay to the removal of the class
+    $(`.${currentColour}`).removeClass("pressed"); //removing the class of the selected button
+  }, 100); // delay time
 }
